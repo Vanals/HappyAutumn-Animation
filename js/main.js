@@ -20,8 +20,8 @@
 
 	// clear stage
 	function clearStage() {
-		// GIVEN we are gonna animate more elements and let them doing differents thing in the time we use a TimelineMax
-		// instead of a simple TweenMax. Then we can use methods as set" to change they properties
+		// GIVEN we are gonna animate more elements and let them do different things in a timeline we use a TimelineMax
+		// instead of a simple TweenMax. Then we can use methods as "set"to change they properties
 		var clearTl = new TimelineMax();
 		clearTl
 				.set($backFallingLeaves, {autoAlpha: 0})
@@ -35,8 +35,8 @@
 				.set($floorLeaves, {y: '+=275', onComplete: showContainer})
 		;
 
-		// To a void a flash. where all the svg were not hidden yet, we directly set in our css
-		//  the conteiner as hidden. Now we vreating and call on complete, a function which show again the container, in order
+		// To a void a flash -  when all the svg were not hidden yet, we directly set in our css
+		//  the container as hidden. Now we are creating and call on complete, a function which show again the container, in order
 		//  to be able to slowly show again the single svgs.
 		function showContainer() {
 			$cardContainer.css('display', 'block');
@@ -50,12 +50,12 @@
 
 		fleavesTl
 						.staggerTo($floorLeaves, 1, {y:0, ease: Back.easeOut}, 0.01)
-						// We use staggerTo instead of simply .to, when we want to stagger more svg element, so like modify them, mode them with a
-						// delay one from the other. So like when one finish the other start, a relative delay than the previous svg edit.
+						// We use staggerTo instead of simply .to, when we want to stagger more svg element. For example: modify, move them with a
+						// delay one from the other. When one transition for one SVG is finish the next transition start with a relative delay than the previous transition.
 						// In this way we are moving every svg item in the floorLeaves group to y:0, every svg will move after 0.2 the previous edit started.
 						.fromTo($tree, 1, {scaleY:0.2, autoAlpha:0, transformOrigin:'center bottom'}, {scaleY:1, autoAlpha:1, transformOrigin:'center bottom', ease: Back.easeOut})
 						.fromTo($tree, 1, {scaleX:0.2, autoAlpha:0, transformOrigin:'center bottom'}, {scaleX:1, autoAlpha:1, transformOrigin:'center bottom', ease: Back.easeOut}, "-=0.9")
-						// Here qw are giving an offset but given that we are delaying only 1 element we dont' use staggerTo, to stagger more elements at the same time.
+						// Here we are giving an offset but given that we are delaying only 1 element we dont' use staggerTo, to stagger more elements at the same time.
 
 		return fleavesTl;
 	}
@@ -149,8 +149,6 @@
 					.add(enterFloorVegetation(), 'scene-floor-vegetation')
 					.add(enterTreeStuff(), 'scene-enter-treeStuff')
 					.add(enterGreeting(), 'scene-greeting')
-
-
 	}
 
 	go();

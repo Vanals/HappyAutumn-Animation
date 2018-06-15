@@ -55,7 +55,7 @@ textarea {
 /* ==========================================================================
    SiggyWork's custom styles
    ========================================================================== */
-   
+
 body {
   font: 16px Helvetica, Arial, sans-serif;
   background-color: #f3ebcc;
@@ -71,7 +71,7 @@ body {
     margin: auto auto 0px;
     width:100%;
     height: auto;
-    /* display: none; */
+    display: none;
 }
 
 svg {
